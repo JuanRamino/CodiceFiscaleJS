@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const createVariants = require('parallel-webpack').createVariants
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 function createConfig (options) {
   return {
@@ -30,11 +31,9 @@ function createConfig (options) {
         }
       ]
     },
-    plugins: [
-      new webpack
-        .optimize
-        .UglifyJsPlugin()
-    ]
+    optimization: {
+      minimizer: [new UglifyJsPlugin()],
+    }
   }
 }
 

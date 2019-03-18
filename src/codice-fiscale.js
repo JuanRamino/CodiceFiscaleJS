@@ -1,6 +1,7 @@
 import { Comune } from './comune';
 import { CHECK_CODE_CHARS, CHECK_CODE_EVEN, CHECK_CODE_ODD, MONTH_CODES, OMOCODIA_TABLE } from './constants';
 import { extractConsonants, extractVowels, getValidDate, birthplaceFields } from './utils';
+import { PROVINCE, COMUNI } from './geo-data';
 
 class CodiceFiscale {
     get day() {
@@ -198,7 +199,9 @@ class CodiceFiscale {
 }
 
 CodiceFiscale.utils = {
-    birthplaceFields : birthplaceFields
+    birthplaceFields : birthplaceFields,
+    COMUNI,
+    PROVINCE
 }
 
 module.exports = CodiceFiscale
